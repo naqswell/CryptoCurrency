@@ -51,6 +51,7 @@ android {
 
 dependencies {
     implementation(project(":core"))
+    implementation(project(":feature-test"))
     implementation(libs.hilt)
     implementation(libs.timber)
 

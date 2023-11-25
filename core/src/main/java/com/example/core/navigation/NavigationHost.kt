@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import com.example.core.navigation.destinations.TestDestination
 
 @Composable
 fun NavigationHost(
@@ -13,7 +14,7 @@ fun NavigationHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = "",
+        startDestination = TestDestination.route,
         modifier = modifier,
     ) {
         factories.forEach { factory ->
