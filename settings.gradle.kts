@@ -1,5 +1,8 @@
 @file:Suppress("UnstableApiUsage")
 
+include(":network-coinstats")
+
+
 include(":feature-test")
 
 
