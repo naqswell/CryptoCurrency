@@ -1,9 +1,6 @@
 @file:Suppress("UnstableApiUsage")
 
-include(":network-coinstats")
-
-
-include(":feature-test")
+include(":feature-coins-list")
 
 
 pluginManagement {
@@ -24,3 +21,5 @@ dependencyResolutionManagement {
 rootProject.name = "CryptoCurrency"
 include(":app")
 include(":core")
+include(":feature-test")
+include(":network-coinstats")

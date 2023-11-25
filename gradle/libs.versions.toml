@@ -30,6 +30,9 @@ kotlin-serialization-converter      = "1.0.0"
 navigation                          = "2.7.5"
 navigation-hilt                     = "1.1.0"
 androidx-core-core-ktx              = "1.12.0"
+junit = "4.13.2"
+androidx-test-ext-junit = "1.1.5"
+espresso-core = "3.5.1"
 
 [plugins]
 android-application                 = { id = "com.android.application", version.ref = "android-gradle" }
@@ -61,4 +64,6 @@ navigationCompose-hilt              = { module = "androidx.hilt:hilt-navigation-
 core-ktx                            = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-core-ktx" }
 kotlin-serialization                = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlin-serialization" }
 kotlin-serialization-converter      = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "kotlin-serialization-converter" }
-
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
