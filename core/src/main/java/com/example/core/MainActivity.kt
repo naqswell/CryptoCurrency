@@ -22,7 +22,6 @@ class MainActivity : ComponentActivity() {
             AppTheme(darkTheme = true) {
                 Scaffold { innerPadding ->
                     Box(modifier = Modifier.padding(innerPadding)) {
-
                     }
                 }
             }

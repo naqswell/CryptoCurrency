@@ -55,5 +55,6 @@ dependencies {
     implementation(libs.timber)
     implementation(libs.okhttp.logging.interceptor)
     implementation(libs.retrofit)
+    implementation(libs.navigationCompose)
     ksp(libs.hilt.compiler)
 }

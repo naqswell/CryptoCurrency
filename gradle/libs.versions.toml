@@ -24,6 +24,9 @@ material                            = "1.10.0"
 okhttp-logging-interceptor          = "4.12.0"
 retrofit                            = "2.9.0"
 
+navigation                          = "2.7.5"
+navigation-hilt                     = "1.1.0"
+
 [plugins]
 android-application                 = { id = "com.android.application", version.ref = "android-gradle" }
 android-library                     = { id = "com.android.library", version.ref = "android-gradle" }
@@ -47,4 +50,5 @@ material                            = { group = "com.google.android.material", n
 lifecycle-runtime-compose           = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
 okhttp-logging-interceptor          = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp-logging-interceptor" }
 retrofit                            = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+navigationCompose                   = { module = "androidx.navigation:navigation-compose", version.ref = "navigation" }
 
