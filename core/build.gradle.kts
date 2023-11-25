@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.kotlin.coroutines)
     implementation(libs.lifecycle.runtime.compose)
     implementation(libs.timber)
-
+    implementation(libs.okhttp.logging.interceptor)
+    implementation(libs.retrofit)
     ksp(libs.hilt.compiler)
 }
