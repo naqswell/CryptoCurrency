@@ -2,6 +2,12 @@ package com.example.core.design
 
 import androidx.compose.ui.graphics.Color
 
+val CustomGreen = Color(0xFF19B661)
+val CustomRed = Color(0xFFE8503A)
+val CustomYellow = Color(0xFFFFEB3B)
+val LighterGray = Color(0xFF515157)
+val TextWhite = Color(0xFFEEEEEE)
+
 val md_theme_light_primary = Color(0xFF00696F)
 val md_theme_light_onPrimary = Color(0xFFFFFFFF)
 val md_theme_light_primaryContainer = Color(0xFF79F5FF)
