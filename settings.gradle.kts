@@ -1,12 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
-include(":cache-coins")
+include(":feature-coins-tracking-list")
 
-
-include(":feature-coin-details")
-
-
-include(":feature-coins-list")
 
 
 pluginManagement {
@@ -29,3 +24,6 @@ include(":app")
 include(":core")
 include(":feature-test")
 include(":network-coinstats")
+include(":cache-coins")
+include(":feature-coin-details")
+include(":feature-coins-list")

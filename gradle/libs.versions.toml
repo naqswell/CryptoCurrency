@@ -34,6 +34,9 @@ coil                                = "2.4.0"
 
 room                                = "2.6.0"
 startup-runtime                     = "1.1.1"
+junit = "4.13.2"
+androidx-test-ext-junit = "1.1.5"
+espresso-core = "3.5.1"
 
 
 [plugins]
@@ -72,3 +75,6 @@ room                                = { module = "androidx.room:room-runtime", v
 room-compiler                       = { module = "androidx.room:room-compiler", version.ref = "room" }
 room-ktx                            = { module = "androidx.room:room-ktx", version.ref = "room" }
 androidx-startup-runtime            = { module = "androidx.startup:startup-runtime", version.ref = "startup-runtime" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
