@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -44,8 +45,7 @@ internal fun CoinItem(
         ) {
             Row(
                 modifier =
-                Modifier
-                    .padding(20.dp)
+                Modifier.padding(20.dp)
             ) {
                 Column(
                     horizontalAlignment = Alignment.Start,
@@ -56,13 +56,13 @@ internal fun CoinItem(
                         modifier = Modifier
                             .clip(CircleShape)
                             .background(LighterGray)
-                            .size(60.dp)
+                            .size(62.dp)
                     ) {
                         AsyncImage(
                             model = coin.icon,
                             contentDescription = "Icon",
                             modifier = Modifier
-                                .size(30.dp)
+                                .size(32.dp)
                                 .align(Alignment.Center)
                         )
                     }
@@ -73,20 +73,24 @@ internal fun CoinItem(
                     horizontalAlignment = Alignment.Start,
                     modifier = Modifier
                         .weight(5f),
-                    verticalArrangement = Arrangement.spacedBy(4.dp)
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
                     Text(
                         text = coin.name,
                         textAlign = TextAlign.Start
                     )
 
-                    Row {
+                    Row(
+                        modifier = Modifier.padding(start = 8.dp),
+                        horizontalArrangement = Arrangement.spacedBy(4.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
                         Box(
                             modifier = Modifier
-                                .clip(RoundedCornerShape(4.dp))
-                                .background(LighterGray)
+                                .size(28.dp)
+                                .clip(CircleShape)
+                                .background(MaterialTheme.colorScheme.onTertiary)
                                 .align(Alignment.CenterVertically)
-                                .padding(2.dp)
                         ) {
                             Text(
                                 text = coin.rank.toString(),
@@ -100,11 +104,8 @@ internal fun CoinItem(
                             text = coin.symbol,
                             fontSize = 12.sp,
                             modifier = Modifier
-                                .padding(start = 5.dp)
                         )
-
                     }
-
                 }
 
                 Column(
