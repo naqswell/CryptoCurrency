@@ -1,5 +1,8 @@
 @file:Suppress("UnstableApiUsage")
 
+include(":cache-coins")
+
+
 include(":feature-coin-details")
 
 

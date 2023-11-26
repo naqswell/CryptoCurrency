@@ -56,6 +56,7 @@ dependencies {
     implementation(project(":feature-test"))
     implementation(libs.hilt)
     implementation(libs.timber)
+    implementation(libs.androidx.startup.runtime)
 
     ksp(libs.hilt.compiler)
     coreLibraryDesugaring(libs.desugar)

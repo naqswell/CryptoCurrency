@@ -18,6 +18,11 @@
         tools:targetApi="34"
         >
 
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            tools:node="remove" />
+
     </application>
 
 </manifest>
