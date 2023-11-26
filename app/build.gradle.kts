@@ -54,6 +54,7 @@ dependencies {
     implementation(project(":feature-coins-list"))
     implementation(project(":feature-coin-details"))
     implementation(project(":feature-test"))
+    implementation(project(":feature-coins-tracking-list"))
     implementation(libs.hilt)
     implementation(libs.timber)
     implementation(libs.androidx.startup.runtime)
