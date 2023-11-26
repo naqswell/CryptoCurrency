@@ -8,8 +8,12 @@ import com.example.core.navigation.NavigationManager
 import com.example.core.navigation.destinations.BackDestination
 import com.example.core.navigation.destinations.CoinDetailsDestination
 import com.example.core.utils.Resource
+import com.example.feature_coin_details.data.mapper.toEntityModel
 import com.example.feature_coin_details.domain.model.CoinDetails
+import com.example.feature_coin_details.domain.usecase.AddCoinTrackingUseCase
+import com.example.feature_coin_details.domain.usecase.DeleteCoinTrackingUseCase
 import com.example.feature_coin_details.domain.usecase.GetCoinByIdUseCase
+import com.example.feature_coin_details.domain.usecase.IsCoinTrackingExistUseCase
 import com.example.feature_coin_details.presentation.mapper.toPresentationModel
 import com.example.feature_coin_details.presentation.state.CoinDetailsState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -26,6 +30,9 @@ class CoinDetailViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     private val navigationManager: NavigationManager,
     private val getCoinByIdUseCase: GetCoinByIdUseCase,
+    private val addCoinTrackingUseCase: AddCoinTrackingUseCase,
+    private val deleteCoinTrackingUseCase: DeleteCoinTrackingUseCase,
+    private val isCoinTrackingExistUseCase: IsCoinTrackingExistUseCase
 ) : ViewModel() {
 
     private var currentCoin: MutableStateFlow<CoinDetails?> = MutableStateFlow(null)
@@ -69,6 +76,7 @@ class CoinDetailViewModel @Inject constructor(
                     is Resource.Success -> {
                         resource.data?.let { coin ->
                             currentCoin.value = coin
+                            initCoinTrackingState(coin)
                         }
                     }
 
@@ -83,4 +91,28 @@ class CoinDetailViewModel @Inject constructor(
             }.launchIn(viewModelScope)
     }
 
+    private fun initCoinTrackingState(coin: CoinDetails) {
+        viewModelScope.launch {
+            _uiState.update {
+                it.copy(
+                    isTracking = isCoinTrackingExistUseCase(coin.toEntityModel().coinId)
+                )
+            }
+        }
+    }
+
+    fun onIsCoinTrackingChanged() {
+        viewModelScope.launch {
+            if (_uiState.value.isTracking) {
+                currentCoin.value?.let { deleteCoinTrackingUseCase(it) }
+            } else {
+                currentCoin.value?.let { addCoinTrackingUseCase(it) }
+            }
+            _uiState.update {
+                it.copy(
+                    isTracking = !it.isTracking
+                )
+            }
+        }
+    }
 }

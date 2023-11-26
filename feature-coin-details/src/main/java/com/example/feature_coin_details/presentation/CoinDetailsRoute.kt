@@ -25,8 +25,7 @@ internal fun CoinDetailsRoute(
                 icon = coin?.icon,
                 onNavigateBack = { viewModel.onNavigateBack() },
                 isTracking = isTracking,
-                onClick = { coin?.let { } }
-            )
+                onClick = { coin?.let { viewModel.onIsCoinTrackingChanged() } })
         }
     ) { innerPadding ->
         coin?.let { coin ->
