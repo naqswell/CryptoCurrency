@@ -45,6 +45,7 @@ android {
 dependencies {
 
     implementation(project(":core"))
+    implementation(project(":cache-coins"))
     implementation(project(":network-coinstats"))
 
     implementation(platform(libs.compose.bom))
