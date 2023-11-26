@@ -1,4 +1,4 @@
-package com.example.feature_coins_tracking.data.repository
+package com.example.feature_coins_tracking_list.data.repository
 
 import com.example.cache_coins.dao.CoinsTrackingDao
 import com.example.feature_coins_tracking_list.data.mapper.toDomainModel

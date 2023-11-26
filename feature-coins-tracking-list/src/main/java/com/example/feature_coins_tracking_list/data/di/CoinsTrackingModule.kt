@@ -1,6 +1,6 @@
 package com.example.feature_coins_tracking_list.data.di
 
-import com.example.feature_coins_tracking.data.repository.CoinsTrackingRepositoryImpl
+import com.example.feature_coins_tracking_list.data.repository.CoinsTrackingRepositoryImpl
 import com.example.feature_coins_tracking_list.domain.repository.CoinsTrackingRepository
 import com.example.feature_coins_tracking_list.domain.usecase.GetAllCoinsTrackingUseCase
 import com.example.feature_coins_tracking_list.domain.usecase.getAllCoinsTrackingUseCase
