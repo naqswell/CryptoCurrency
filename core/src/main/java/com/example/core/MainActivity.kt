@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.core.view.WindowCompat
 import androidx.navigation.compose.rememberNavController
 import com.example.core.design.AppTheme
+import com.example.core.navigation.BottomBarNavigation
 import com.example.core.navigation.NavigationFactory
 import com.example.core.navigation.NavigationHost
 import com.example.core.navigation.NavigationManager
@@ -31,7 +32,13 @@ class MainActivity : ComponentActivity() {
         setContent {
             AppTheme(darkTheme = true) {
                 val navController = rememberNavController()
-                Scaffold { innerPadding ->
+                Scaffold(
+                    bottomBar = {
+                        BottomBarNavigation(
+                            navigationManager = navigationManager,
+                        )
+                    }
+                ) { innerPadding ->
                     NavigationHost(
                         navController = navController,
                         factories = navigationGraphFactories,
