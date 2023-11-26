@@ -16,7 +16,7 @@ internal fun CoinsRoute(
     CoinsPaginationContent(
         coins = coins,
         isLoading = isNewPageLoading,
-        onItemlick = { },
+        onItemlick = { id -> viewModel.onNavigateCoinDetails(id) },
         getItems = { viewModel.onCoinsUpload() }
     )
 

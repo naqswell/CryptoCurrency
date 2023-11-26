@@ -2,7 +2,9 @@ package com.example.feature_coins_list.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.core.navigation.NavigationCommand
 import com.example.core.navigation.NavigationManager
+import com.example.core.navigation.destinations.CoinDetailsDestination
 import com.example.feature_coins_list.presentation.model.CoinDisplayable
 import com.example.feature_coins_list.presentation.state.CoinsListState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -72,6 +74,16 @@ class CoinsViewModel @Inject constructor(
         _state.update {
             it.copy(error = message ?: "Unexpected Error")
         }
+    }
+
+    fun onNavigateCoinDetails(coinId: String) {
+        navigationManager.navigate(object : NavigationCommand {
+            override val destination: String
+                get() {
+                    val args = mapOf(CoinDetailsDestination.ARGS_KEYS.COIN_ID to coinId)
+                    return CoinDetailsDestination.getRouteWithArgs(args)
+                }
+        })
     }
 
 }
