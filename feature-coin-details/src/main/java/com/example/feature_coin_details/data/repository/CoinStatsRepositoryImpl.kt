@@ -1,4 +1,4 @@
-package com.example.feature_coin_details.data
+package com.example.feature_coin_details.data.repository
 
 import com.example.feature_coin_details.data.mapper.toDomainModel
 import com.example.feature_coin_details.domain.model.CoinDetails

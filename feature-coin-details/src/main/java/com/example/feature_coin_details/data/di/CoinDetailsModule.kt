@@ -1,6 +1,6 @@
 package com.example.feature_coin_details.data.di
 
-import com.example.feature_coin_details.data.CoinStatsRepositoryImpl
+import com.example.feature_coin_details.data.repository.CoinStatsRepositoryImpl
 import com.example.feature_coin_details.domain.repository.CoinsStatsRepository
 import dagger.Binds
 import dagger.Module
