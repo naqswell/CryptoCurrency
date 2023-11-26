@@ -1,6 +1,5 @@
 package com.example.feature_coins_tracking_list.domain.model
 
-import com.example.cache_coins.database.DateTypeConverter
 import java.util.Date
 
 data class CoinTracking(
